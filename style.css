@@ -1,0 +1,451 @@
+:root {
+    --bg: #121214;
+    --bg-soft: rgba(25, 25, 28, 0.85);
+    --panel: rgba(255, 255, 255, 0.04);
+    --panel-strong: rgba(255, 255, 255, 0.08);
+    --text: #f3efe9;
+    --muted: #d9c9bb;
+    --heading: #f7f3ee;
+    --accent: #d6a07d;
+    --accent-strong: #c96d4c;
+    --line: rgba(255, 255, 255, 0.09);
+    --shadow: rgba(0, 0, 0, 0.28);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg);
+    background-image: linear-gradient(rgba(12, 12, 14, 0.78), rgba(12, 12, 14, 0.82)), url('img.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: var(--text);
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    background: rgba(17, 17, 18, 0.7);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+}
+
+.nav-links {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 16px 20px;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text);
+    font-size: 0.76rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    transition: color 0.2s ease;
+    padding: 8px 2px;
+}
+
+.nav-links a:hover {
+    color: var(--accent);
+}
+
+main {
+    width: min(1100px, calc(100% - 28px));
+    margin: 0 auto;
+    padding-bottom: 80px;
+}
+
+section {
+    padding: 80px 0 26px;
+}
+
+.intro {
+    min-height: 78vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    padding-top: 50px;
+}
+
+.intro-text,
+.image-box {
+    flex: 1;
+}
+
+.intro-text {
+    max-width: 600px;
+    color: var(--text);
+}
+
+.eyebrow {
+    margin: 0 0 10px;
+    color: var(--accent);
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+}
+
+.intro-text h1 {
+    margin: 0;
+    font-size: clamp(3rem, 5vw, 5rem);
+    line-height: 0.96;
+    color: var(--heading);
+    font-weight: 700;
+    letter-spacing: -0.06em;
+}
+
+.tagline {
+    font-size: clamp(1.1rem, 2vw, 1.45rem);
+    line-height: 1.7;
+    color: var(--muted);
+    margin-top: 16px;
+    max-width: 560px;
+}
+
+.cta-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 28px;
+}
+
+.primary-btn,
+.secondary-btn,
+.contact-links a,
+.project-card a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.primary-btn,
+.secondary-btn {
+    padding: 18px 26px;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 1.02rem;
+}
+
+.primary-btn {
+    background: linear-gradient(135deg, #e7b28f, #d57e60);
+    color: #1c1411;
+    box-shadow: none;
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+.secondary-btn {
+    background: rgba(255,255,255,0.04);
+    color: var(--text);
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+.primary-btn:hover,
+.secondary-btn:hover,
+.contact-links a:hover,
+.project-card a:hover {
+    transform: translateY(-1px);
+    opacity: 0.96;
+}
+
+.mini-highlights {
+    list-style: none;
+    padding: 0;
+    margin: 26px 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.mini-highlights li {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--line);
+    color: var(--text);
+    padding: 9px 14px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    letter-spacing: 0.01em;
+}
+
+.divider {
+    width: 1px;
+    min-height: 260px;
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.image-box {
+    display: flex;
+    justify-content: center;
+}
+
+.image {
+    width: min(300px, 78vw);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 4px solid rgba(255,255,255,0.14);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease;
+}
+
+.image:hover {
+    transform: scale(1.02);
+}
+
+.section-heading {
+    margin-bottom: 22px;
+}
+
+.section-heading h2 {
+    margin: 0;
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    color: var(--heading);
+    letter-spacing: -0.04em;
+}
+
+.card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    box-shadow: 0 18px 30px var(--shadow);
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 26px;
+}
+
+.about-text {
+    padding: 28px 24px;
+}
+
+.about-text p {
+    margin: 0 0 16px;
+    color: var(--muted);
+    line-height: 1.8;
+    font-size: 1.02rem;
+}
+
+.about-text p:last-child {
+    margin-bottom: 0;
+}
+
+.quick-facts {
+    padding: 26px 22px;
+}
+
+.quick-facts h3 {
+    margin-top: 0;
+    margin-bottom: 16px;
+    font-size: 1.45rem;
+}
+
+.fact {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--line);
+}
+
+.fact:last-child {
+    border-bottom: none;
+}
+
+.fact span {
+    color: var(--accent);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.fact strong {
+    color: var(--text);
+    font-size: 1rem;
+}
+
+.skill-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.skill-grid span {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    color: var(--text);
+    padding: 11px 15px;
+    font-weight: 500;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.project-card {
+    padding: 24px 20px;
+}
+
+.project-tag {
+    display: inline-block;
+    background: rgba(214, 160, 125, 0.1);
+    border: 1px solid rgba(214, 160, 125, 0.2);
+    color: var(--accent);
+    border-radius: 999px;
+    padding: 7px 10px;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.project-card h3 {
+    margin: 0 0 10px;
+    font-size: 1.4rem;
+}
+
+.project-card p {
+    margin: 0 0 18px;
+    line-height: 1.7;
+    color: var(--muted);
+}
+
+.project-card a {
+    color: var(--text);
+    border: 1px solid var(--line);
+    padding: 10px 16px;
+    border-radius: 999px;
+    width: fit-content;
+    background: rgba(255,255,255,0.02);
+}
+
+.contact {
+    padding-bottom: 80px;
+}
+
+.contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 24px;
+}
+
+.contact-links a {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--line);
+    color: var(--text);
+    padding: 14px 20px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.github-logo {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.4);
+    border: 1px solid rgba(255,255,255,0.12);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease;
+}
+
+.github-logo:hover {
+    transform: scale(1.05);
+}
+
+.github-logo img {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+}
+
+@media (max-width: 860px) {
+    .intro {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .divider {
+        display: none;
+    }
+
+    .about-content,
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-heading {
+        text-align: center;
+    }
+
+    .cta-buttons,
+    .mini-highlights,
+    .contact-links,
+    .skill-grid {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 500px) {
+    .nav-links {
+        gap: 12px;
+    }
+
+    .nav-links a {
+        font-size: 0.68rem;
+        letter-spacing: 0.1em;
+    }
+
+    .intro-text h1 {
+        font-size: 2.6rem;
+    }
+
+    .primary-btn,
+    .secondary-btn,
+    .contact-links a {
+        width: 100%;
+    }
+
+    .github-logo {
+        width: 46px;
+        height: 46px;
+        right: 14px;
+        bottom: 14px;
+    }
+}
